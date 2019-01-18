@@ -1,0 +1,46 @@
+
+ Preparing project...
+
+ OK  Symfony 3.4.21 was successfully installed. Now you can:
+
+    * Change your current directory to D:\xampp32\htdocs\blogsilga
+
+    * Configure your application in app/config/parameters.yml file.
+
+    * Run your application:
+        1. Execute the php bin/console server:run command.
+        2. Browse to the http://localhost:8000 URL.
+
+    * Read the documentation at https://symfony.com/doc
+
+
+silga@SILGA-PC d:\xampp32\htdocs
+
+http://localhost/blogsilga/web/app_dev.php
+
+#Pour installer  symfony/webpack-encore-pack 
+#Dependence
+composer require symfony/asset
+composer require symfony/webpack-encore-pack
+
+#https://symfony.com/doc/3.4/setup/flex.html
+
+
+"require": {
+    "symfony/assetic-bundle": "^2.7.1",
+    "leafo/scssphp": "~0.6",
+    "patchwork/jsqueeze": "~1.0"
+},
+
+https://symfony.com/doc/3.4/frontend/assetic/asset_management.html
+
+framework:
+ ....
+ templating:
+        engines: ['twig']
+#Assetic config
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
