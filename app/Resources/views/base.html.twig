@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+
+            {% stylesheets '@bootstrap_css' filter='cssrewrite'  output='css/compiled/bootstrap.css' %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+
+            {% stylesheets '@fontAwesome_css' filter='cssrewrite' output='css/compiled/fontAwesome.css' %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+
+            {% stylesheets '@jquery_ui_css' filter='cssrewrite' output='css/compiled/jquery_ui.css'  %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+            {% stylesheets '@datepicker_css' filter='cssrewrite' output='css/compiled/datepicker.css'  %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+            {% stylesheets '@dataTables_css' filter='cssrewrite' output='css/compiled/dataTables.css'  %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+          
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            {% spaceless %}
+            {% javascripts '@jquery_js' output='js/compiled/jquery.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            {% javascripts '@bootstrap_js'  output='js/compiled/bootstrap.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            {% javascripts '@jquery_ui_js'  output='js/compiled/jquery_ui.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+            {% javascripts '@modernizr_js'  output='js/compiled/modernizr.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+             {% javascripts '@moment_js'  output='js/compiled/moment.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+             {% javascripts '@datepicker_js'  output='js/compiled/datepicker.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+             {% javascripts '@datepicker_fr_js'  output='js/compiled/datepicker_fr.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+             {% javascripts '@dataTables_js'  output='js/compiled/dataTables.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+            {% endspaceless %}
+        {% endblock %}
+    </body>
+</html>
